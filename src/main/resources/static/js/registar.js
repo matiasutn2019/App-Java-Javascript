@@ -23,6 +23,7 @@ async function registrarUsuario() {
     	},
     	body: JSON.stringify(datos)
  	});
- 	location.reload();
+ 	
  	alert('Cuenta creada exitosamente!!!');
+ 	window.location.assign("usuarios.html");
 }

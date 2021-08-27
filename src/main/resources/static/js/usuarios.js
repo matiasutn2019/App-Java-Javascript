@@ -2,7 +2,12 @@
 $(document).ready(function() {
 	cargarUsuarios();
   	$('#usuarios').DataTable();
+  	actualizarUsuario();
 });
+
+function actualizarUsuario() {
+	document.getElementById('txt-usuario').outerHTML = localStorage.email;
+}
 
 async function cargarUsuarios() {
 	const request = await fetch('api/usuarios', {
@@ -19,10 +24,8 @@ async function cargarUsuarios() {
   	
   	for(usuario of usuarios) {
   		let botonEliminar = '<a href="#" onclick = "eliminarUsuario(' + usuario.id + ')" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>';
-  		let telefonoTxt = usuario.telefono == null ? '-' : usuario.telefono;//evita el 'null' en la table
   		let usuarioHtml = '<tr><td>' + usuario.id + '</td><td>' + usuario.nombre + ' ' + usuario.apellido + '</td><td>'
-  			+ usuario.email + '</td><td>' + telefonoTxt
-  			+ '</td><td>' + botonEliminar + '</td></tr>';
+  			+ usuario.email + '</td><td>' + botonEliminar + '</td></tr>';
   		listadoHtml += usuarioHtml;
   	}
  	

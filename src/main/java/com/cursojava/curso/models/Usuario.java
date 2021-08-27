@@ -35,10 +35,6 @@ public class Usuario {
 	@Getter @Setter
 	private String email;
 	
-	@Column(name = "telefono")
-	@Getter @Setter
-	private String telefono;
-	
 	@Column(name = "password")
 	@Getter @Setter
 	private String password;
@@ -66,15 +62,6 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
 	public String getPassword() {
 		return password;
 	}
