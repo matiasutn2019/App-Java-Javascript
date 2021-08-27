@@ -9,7 +9,8 @@ async function cargarUsuarios() {
    		method: 'GET',
     	headers: {
       		'Accept': 'application/json',
-      		'Content-Type': 'application/json'
+      		'Content-Type': 'application/json',
+   	  		'Authorization': localStorage.token
     	}
  	});
   	const usuarios = await request.json();
@@ -36,7 +37,8 @@ async function eliminarUsuario(id) {
 		method: 'DELETE',
    		headers: {
       		'Accept': 'application/json',
-   	  		'Content-Type': 'application/json'
+   	  		'Content-Type': 'application/json',
+   	  		'Authorization': localStorage.token
    		}
 	}); 	
 	location.reload();//actualiza la página para q se elimine el usuario de la table

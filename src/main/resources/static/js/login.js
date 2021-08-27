@@ -16,9 +16,10 @@ async function iniciarSesion() {
     	body: JSON.stringify(datos)
  	});
  	const response = await request.text();
- 	if(response == 'OK') {
+ 	if(response != 'FAIL') {
+ 		localStorage.token = response;//guarda en el storage del browser
+ 		localStorage.email = datos.email;
  		window.location.href = 'usuarios.html';
- 		//a donde se debe dirigir en caso de dar OK el método login de la clase AuthController
  	} else {
  		alert('Credenciales incorrectas!!!');
  	}

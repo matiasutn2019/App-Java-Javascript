@@ -83,4 +83,8 @@ public class Usuario {
 		this.password = password;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
 }
